@@ -1,0 +1,98 @@
+.table-container {
+    flex-grow: 1; /* Allows it to expand as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 500px; /* Adjust height to fit within the viewport */
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+}
+
+.appointments-container h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Fixing the table headers */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures equal column widths to fit in available space */
+}
+
+th {
+    position: sticky; /* Makes the headers stay at the top */
+    top: 0; /* Sticks to the top of the container */
+    z-index: 2; /* Ensures the headers stay above other content */
+    background-color: #4CAF50; /* Matches your header color */
+    color: white;
+    padding: 15px; /* Padding for better readability */
+    border-bottom: 2px solid #ddd; /* A solid bottom border for clarity */
+}
+
+/* Styling for rows and cells */
+td {
+    padding: 15px; /* Space for content */
+    text-align: left;
+    word-wrap: break-word; /* Prevents overflow of long content */
+    border-bottom: 1px solid #ddd; /* Separates rows */
+}
+
+/* Alternating background for rows */
+tr:nth-child(odd) td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+/* Hover effect for rows */
+tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* Styling for the Button */
+.back-button {
+    display: block;
+    width: 150px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the Fixed "Back to Barbers" Button */
+.back-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the page */
+    left: 50%; /* Horizontally center the button */
+    transform: translateX(-50%); /* Center button exactly */
+    width: 150px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Ensure it stays on top of other content */
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}

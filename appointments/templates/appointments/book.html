@@ -1,0 +1,136 @@
+
+{% extends "base.html" %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea, select, button {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .cancel-button {
+            background-color: #f44336; /* Red color */
+            margin-top: 15px;
+        }
+
+        .cancel-button:hover {
+            background-color: #e53935; /* Darker red */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book an Appointment</h1>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Dropdown for selecting barber -->
+            <label for="barber">Choose a Barber:</label>
+            <select id="barber" name="barber" required>
+                <option value="" disabled selected>-- Select a Barber --</option> <!-- Placeholder option -->
+                {% for barber in barbers %}
+                    <option value="{{ barber.id }}">{{ barber.name }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- Input fields for other details -->
+            <label for="customer_name">Your Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+
+            <label for="customer_email">Your Email:</label>
+            <input type="email" id="customer_email" name="customer_email" required>
+
+            <label for="date">Appointment Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Appointment Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+
+        <!-- Cancel Button to go back to the index page -->
+        <button class="cancel-button" onclick="window.location.href='/'">Cancel</button> <!-- Redirects to the home page -->
+    </div>
+</body>
+</html> {% endcomment %}
+
+
+
+
+{% block title %}Book Appointment{% endblock %}
+{% load static %}
+{% block cssfiles %}
+<link rel="stylesheet" href="{% static 'appointments/book.css' %}">
+{% endblock  %}
+{% block content %}
+<div class="container">
+    <h2>Book an Appointment</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="barber">Choose a Barber:</label>
+        <select id="barber" name="barber" required>
+            <option value="" disabled selected>-- Select a Barber --</option>
+            {% for barber in barbers %}
+                <option value="{{ barber.id }}">{{ barber.name }}</option>
+            {% endfor %}
+        </select>
+        <label for="customer_name">Your Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+        <label for="customer_email">Your Email:</label>
+        <input type="email" id="customer_email" name="customer_email" required>
+        <label for="date">Appointment Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="time">Appointment Time:</label>
+        <input type="time" id="time" name="time" required>
+        <button type="submit">Book Appointment</button>
+        <a href="{% url 'index' %}" class="cancel-button">Cancel</a>
+    </form>
+</div>
+{% endblock %}

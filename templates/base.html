@@ -1,0 +1,27 @@
+{% comment %} {% load static %} {% endcomment %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Barbershop{% endblock %}</title>
+
+    {% comment %} {% block style %}{% endblock %} {% endcomment %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'base.css' %}"> 
+    {% block cssfiles %}
+
+    {% endblock %}
+</head>
+<body>
+
+    <main>
+        {% block content %}
+        <!-- Content from child templates will go here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        &copy; {{ year }} Barbershop. All Rights Reserved.
+    </footer>
+</body>
+</html>

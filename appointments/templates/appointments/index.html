@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+
+
+{% block title %}Home{% endblock %}
+{% comment %} {% block style %}
+<link rel="stylesheet" href="{% static 'appointments/styles.css' %}">
+{% endblock%} {% endcomment %}
+{% load static %}
+{% block cssfiles %}
+<link rel="stylesheet" href="{% static 'appointments/styles.css' %}">
+{% endblock  %}
+{% block content %}
+<div class="barbers-container">
+    <h2>Meet Our Barbers</h2>
+    <ul class="barbers-list">
+        {% for barber in barbers %}
+            <li class="barber-card">
+                <strong>{{ barber.name }}</strong><br>
+                Expertise: {{ barber.expertise }}<br>
+                Phone: {{ barber.phone_number }}<br>
+                Location: {{ barber.location }}<br>
+                Rating: {{ barber.rating }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="buttons-container">
+    <a href="{% url 'book_appointment' %}" class="book-button">Book an Appointment</a>
+    <a href="{% url 'all_appointments' %}" class="appointments-button">View All Appointments</a>
+</div>
+{% endblock %}

@@ -1,0 +1,100 @@
+/* General Styling */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+main{
+    width: 50%;
+} */
+/* Barbers Container */
+.barbers-container {
+    flex-grow: 1; /* Allow the container to grow and take available space */
+    padding: 40px;
+    margin-bottom: 100px; /* Space for the fixed buttons */
+}
+
+/* Header */
+.barbers-container h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* List of Barbers */
+.barbers-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px; /* Limit the height */
+    overflow-y: auto; /* Enable scrolling */
+}
+
+/* Barber Card Styling */
+.barber-card {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons Container */
+.buttons-container {
+    position: fixed;
+    bottom: 60px; /* Place buttons at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center buttons horizontally */
+    display: flex;
+    gap: 15px;
+    z-index: 10; /* Make sure buttons stay on top */
+}
+
+/* Book Appointment Button */
+.book-button, .appointments-button {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.book-button:hover, .appointments-button:hover {
+    background-color: #45a049;
+}
+
+/* Scrollbar Customization */
+.barbers-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.barbers-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.barbers-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+} */
